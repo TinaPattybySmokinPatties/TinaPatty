@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinaPatty - Premium TinaPatty Delivered Nationwide</title>
+    <link rel="icon" href="png/494814745_692739823504614_965232409620999726_n.png">
+    <style>
+        :root {
+            --primary: #FFBF00;
+            --secondary: #f1faee;
+            --dark: #1e1e1e;
+            --darker: #121212;
+            --light: #a8dadc;
+            --accent: #FFBF00;
+            --text-primary: #f5f5f5;
+            --text-secondary: #aaaaaa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--darker);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--dark);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(29, 53, 87, 0.8), rgba(13, 27, 42, 0.9));
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            
+        }
+        
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: justify;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #c1121f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .menu {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            background-color: var(--dark);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .menu-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+        
+        .menu-item-title {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .menu-item-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .menu-item-desc {
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #c1121f;
+        }
+        
+        .delivery-info {
+            background-color: var(--dark);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .delivery-info h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .delivery-estimate {
+            display: inline-block;
+            background-color: var(--darker);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        
+        .nutrition-title{
+            text-align: center;
+            margin-top: 10rem;
+            margin-bottom: 10rem;
+            font-size: 2rem;
+            color: var(--accent);
+            
+        }
+
+        .nutrition-description {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-left: 6%;
+            margin-bottom: 15px;
+        }
+        
+        .TinaPatty-orig {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px
+        }
+
+        .TinaPatty-spicy {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px
+        }
+
+        
+        .about-us{
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--dark);
+            text-align: start;
+            border-radius: 10px;
+            background-color: var(--darker);
+        }
+
+
+        .about-title {
+            background-color: var(--dark);
+            align-content: center;
+            padding: 20px;
+            border-radius: 50px;
+            border: 1px solid;
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .about-title span p{
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+
+        .aboutP{
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            background-color: var(--dark);
+            padding: 20px;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: start;
+        }
+
+        .aboutP h3{
+            padding-left: 5px;
+        }
+
+        .aboutP span p{
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 10px;
+        }
+
+        
+        footer {
+            background-color: var(--dark);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--secondary);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .contact-number p{
+            margin-bottom: .5rem;
+            color: var(--primary);
+        }
+        
+        .copyright {
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+        
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--dark);
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--light);
+        }
+        
+        .cart-items {
+            margin: 1.5rem 0;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--darker);
+        }
+        
+        .cart-item-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 1rem;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        
+        .quantity-btn {
+            background-color: var(--darker);
+            color: var(--secondary);
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .quantity {
+            margin: 0 0.8rem;
+        }
+        
+        .remove-item {
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .cart-total {
+            text-align: right;
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .checkout-form {
+            margin-top: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--darker);
+            border-radius: 5px;
+            background-color: var(--darker);
+            color: var(--secondary);
+        }
+        
+        .payment-methods {
+            margin: 1.5rem 0;
+        }
+        
+        .payment-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border: 1px solid var(--darker);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-option:hover {
+            border-color: var(--primary);
+        }
+        
+        .payment-option input {
+            margin-right: 1rem;
+        }
+        
+        .payment-icon {
+            margin-right: 0.8rem;
+            font-size: 1.5rem;
+        }
+        
+        .confirm-order {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .confirm-order:hover {
+            background-color: #c1121f;
+        }
+        
+        .order-confirmation {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .order-confirmation h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .estimated-delivery {
+            background-color: var(--darker);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+            font-weight: bold;
+        }
+
+        .lang-menu a{
+            text-decoration: none;
+            color: var(--secondary);
+
+        }
+
+        .lang-menu a :hover{
+            color: var(--primary)
+
+        }
+    
+
+        .selected-lang-EN {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            line-height: 2;
+            width: 100px;
+            margin-left: 25px;
+            text-decoration: none;
+        }
+
+        .selected-lang-EN :hover{
+            color: var(--primary);
+        }
+
+        .selected-lang-EN:before{
+            content: '';
+            display: block;
+            width: 32px;
+            height: 32px;
+            background-image: url(https://flagsapi.com/US/flat/32.png);
+        }
+       
+        .selected-lang-TH{
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            line-height: 2;
+            width: 100px;
+            margin-left: 25px;
+            list-style: none;
+        }
+
+        .selected-lang-TH:before{
+            content: '';
+            display: block;
+            width: 32px;
+            height: 32px;
+            background-image: url(https://flagsapi.com/TH/flat/32.png);
+        }
+
+        @media (max-width: 800px) {
+
+            .about-us{
+                flex-direction: column;
+            }
+
+            .hideOnMobile{
+                display: none;
+            }
+
+            .mn-btn{
+                display: block;
+            }
+
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            
+            .sidebar{
+                width: 100%;
+            }
+            nav ul li {
+                margin-left: 1rem;
+            }
+            
+            .menu-item {
+                margin-bottom: 2rem;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cart-item-price {
+                margin-top: 0.5rem;
+            }
+        }
+
+        .sidebar{
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: #1e1e1e59;
+            backdrop-filter: blur(10px);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .sidebar li{
+            width: 100%;
+        }
+        .sidebar a{
+            width: 100%;
+        }
+
+        .mn-btn{
+            display: block;
+        }
+
+        .contact-number span p{
+            color: var(--text-primary);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <i class="hideOnMobile">
+            <div class="logo">Smokin'<span> Patties</span></div>
+            </i>
+            <nav>
+                <ul class="sidebar">
+                    <li onclick=hideSidebar()><a><img src="png/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="close"></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Product</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                    <li class="cart-icon" onclick="openCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </li>
+                    <div class="lang-menu">
+                        <a href="index.html"><div class="selected-lang-EN">English</div></a>
+                    </div>
+                    <div class="lang-menu">
+                        <a href="indexTH.html"><div class="selected-lang-TH">Thailand</div></a>
+                    </div>
+                    
+                </ul>
+                <ul>
+                    <li class="hideOnMobile"><a href="index.html">Home</a></li>
+                    <li class="hideOnMobile"><a href="index.html">Product</a></li>
+                    <li class="hideOnMobile"><a href="index.html">Contact</a></li>
+                    <li class="hideOnMobile"><a href="#faq">FAQs</a></li>
+                    <i class="hideOnMobile">
+                    <li class="cart-icon" onclick="openCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </li>
+                    </i>
+                    <i class="hideOnMobile">  
+                    <div class="lang-menu">
+                        <a href="index.html"><div class="selected-lang-EN">English</div></a>
+                    </div>
+                    </i>
+                    <i class="hideOnMobile">  
+                    <div class="lang-menu">
+                        <a href="indexTH.html"><div class="selected-lang-TH">Thailand</div></a>
+                    </div>
+                    </i>
+
+                    <li class="mn-btn" onclick=showSidebar()><a><img src="png/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="open"></a></li>
+                    
+                                            
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="about" class="about">
+        <div class="about-us">
+            <div class="about-title">
+                <h2>FAQs</h2>
+                <span><p>Got questions? We've got answers.</p></span>
+            </div>
+            <div class="About us">
+                <div class="aboutP">
+                    <h3>
+                        How can I order online?
+                    </h3>
+                    <span>
+                        <p>- Go to Menu and select which patty you would like to purchase, then click the cart, fill out your information, and select a mode of payment, then click Confirm Order.</p>
+                    </span>
+                </div>
+
+                <div class="About us">
+                <div class="aboutP">
+                    <h3>
+                        How many days will be the estimated time for delivery of my order?
+                    </h3>
+                    <span>
+                        <p>- Standard time of delivery upon ordering is 3-5 days since the products you will order are from the Philippines and might take a while.</p>
+                    </span>
+                </div>
+                <div class="About us">
+                <div class="aboutP">
+                    <h3>
+                        Do you have a minimum order requirement?
+                    </h3>
+                    <span>
+                        <p>- No, there is no minimum number of orders.</p>
+                    </span>
+                </div>
+                <div class="About us">
+                <div class="aboutP">
+                    <h3>
+                        What payment methods do you accept?
+                    </h3>
+                    <span>
+                        <p>- We accept Cash on Delivery, E-wallet, Debit/Credit Card.</p>
+                    </span>
+                </div>
+                <div class="About us">
+                <div class="aboutP">
+                    <h3>
+                        Who are your partner courier/delivery company?
+                    </h3>
+                    <span>
+                        <p>- Our courier are Flash Express TH and KEX Express Thailand.</p>
+                    </span>
+                </div>
+        </div>
+        
+            
+    </section>
+    
+    
+    
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="logo">Tina<span>Patty</span></div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61576679381532" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/smokinpatties_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <br>
+            </div>
+            <div class="contact-number">
+                <p>For more inquiries, concerns, returns, and refunds, you may contact us here with the details below:</p>
+                <p>Mobile Number: +66-960-5161-640</p>
+                <p>Email: tinapatty_2025@gmail.com</p>
+                
+            </div>
+            <br>
+            <p class="copyright">© 2025 TinaPatty. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCart()">&times;</span>
+            <h2>Your Order</h2>
+            
+            <div class="cart-items" id="cartItems">
+               
+                <p>Your cart is empty</p>
+            </div>
+            
+            <div class="cart-total" id="cartTotal">
+                Total: ฿ 0.00
+            </div>
+            
+            <div class="checkout-form" id="checkoutForm">
+                <h3>Delivery Information</h3>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <input type="text" id="address" required placeholder="Enter your address">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="example123@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="+639**-***-****">
+                </div>
+                
+                <h3>Payment Method</h3>
+                <div class="payment-methods">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="credit" checked>
+                        <i class="fab fa-cc-visa payment-icon"></i>
+                        Credit/Debit Card
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="paypal">
+                        <i class="fab fa-cc-paypal payment-icon"></i>
+                        PayPal
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="applepay">
+                        <i class="fab fa-cc-apple-pay payment-icon"></i>
+                        Apple Pay
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cash">
+                        Cash On Delivery
+                    </label>
+                </div>
+                
+                <button class="confirm-order" onclick="placeOrder()">Confirm Order</button>
+            </div>
+            
+            <div class="order-confirmation" id="orderConfirmation">
+                <h3>Thank you for your order!</h3>
+                <p>Your delicious Tinapatty are on their way.</p>
+                <div class="estimated-delivery" id="finalDeliveryEstimate">
+                    Estimated delivery: Friday, November 10 by 7:00 PM
+                </div>
+                <button class="btn" onclick="closeCart()">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        
+        let cart = [];
+        let cartCount = 0;
+        let total = 0;
+        
+        
+        function openCart() {
+            document.getElementById('cartModal').style.display = 'block';
+            updateCartDisplay();
+        }
+        
+     
+        function closeCart() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+        
+     
+        function addToCart(name, price, image) {
+         
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+            
+            cartCount++;
+            total += price;
+            
+            updateCartCount();
+            showAddedToCart(name);
+        }
+        
+       
+        function updateCartCount() {
+            document.querySelector('.cart-count').textContent = cartCount;
+        }
+        
+      
+        function showAddedToCart(itemName) {
+            alert(`${itemName} has been added to your cart!`);
+        }
+        
+    
+        function updateCartDisplay() {
+            const cartItemsEl = document.getElementById('cartItems');
+            const cartTotalEl = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = '<p>Your cart is empty</p>';
+                cartTotalEl.textContent = 'Total: ฿ 0.00';
+                return;
+            }
+            
+            let cartHTML = '';
+            let calculatedTotal = 0;
+            
+            cart.forEach((item, index) => {
+                calculatedTotal += item.price * item.quantity;
+                
+                cartHTML += `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                            <div>
+                                <h4>${item.name}</h4>
+                                <div>฿ ${item.price.toFixed(2)}</div>
+                                <div class="cart-item-quantity">
+                                    <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                                    <span class="quantity">${item.quantity}</span>
+                                    <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-item-price">
+                            ฿ ${(item.price * item.quantity).toFixed(2)}
+                            <div class="remove-item" onclick="removeItem(${index})">Remove</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItemsEl.innerHTML = cartHTML;
+            cartTotalEl.textContent = `Total: ฿ ${calculatedTotal.toFixed(2)}`;
+            total = calculatedTotal;
+        }
+        
+        
+        function updateQuantity(index, change) {
+            const item = cart[index];
+            const newQuantity = item.quantity + change;
+            
+            if (newQuantity < 1) {
+                removeItem(index);
+                return;
+            }
+            
+            item.quantity = newQuantity;
+            cartCount += change;
+            
+            updateCartCount();
+            updateCartDisplay();
+        }
+        
+      
+        function removeItem(index) {
+            const item = cart[index];
+            cartCount -= item.quantity;
+            cart.splice(index, 1);
+            
+            updateCartCount();
+            updateCartDisplay();
+        }
+        
+     
+        function placeOrder() {
+          
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            if (!name || !address || !email || !phone) {
+                alert('Please fill out all delivery information fields.');
+                return;
+            }
+            
+            if (cart.length === 0) {
+                alert('Your cart is empty. Please add items before placing an order.');
+                return;
+            }
+            
+           
+            const deliveryDate = calculateDeliveryDate();
+            
+          
+            document.getElementById('checkoutForm').style.display = 'none';
+            document.getElementById('orderConfirmation').style.display = 'block';
+            document.getElementById('finalDeliveryEstimate').textContent = `Estimated delivery: ${deliveryDate}`;
+            
+        
+            cart = [];
+            cartCount = 0;
+            total = 0;
+            updateCartCount();
+        }
+        
+      
+        function calculateDeliveryDate() {
+            const daysToAdd = 3 + Math.floor(Math.random() * 3);
+            const date = new Date();
+            let addedDays = 0;
+            
+            while (addedDays < daysToAdd) {
+                date.setDate(date.getDate() + 1);
+              
+                if (date.getDay() !== 0 && date.getDay() !== 6) {
+                    addedDays++;
+                }
+            }
+            
+          
+            const options = { weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            return date.toLocaleDateString('en-US', options);
+        }
+        
+       
+        function updateDeliveryEstimate() {
+          
+            document.getElementById('deliveryEstimate').textContent = 'Estimated delivery: 3-5 business days';
+        }
+        
+        
+        updateDeliveryEstimate();
+
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
+</body>
+</html>
